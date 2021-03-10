@@ -16,16 +16,22 @@ def sortedOrder():
                 header.append(line)
 
 
+    for index, entry in enumerate(_list):
+        if index > 20 :
+            break
+        print(entry.location)
+
+    _list.sort()
     # for index, entry in enumerate(_list):
     #     if index > 20 :
     #         break
     #     print(entry.location)
 
-    _list.sort(key = lambda e : e.location) # Tim Sort
-    with open("test.md", "w") as fp:
-        for head in header:
+    with open("test4.md", "w") as fp:
+        for head in header:     # Write header information first
             fp.write(head)
-        for LINE in _list:
+
+        for LINE in _list:      #write the sorted data
             fp.write(LINE.content)
     return
 
